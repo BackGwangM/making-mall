@@ -1,0 +1,29 @@
+
+html,
+body {
+  height: 100%;
+  background-image: linear-gradient(to right, #1BC6E8 10%, #F9AC0D,80%,#D50E25 100%);
+}
+#main{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: -webkit-center;
+    position: absolute; width:100%; top: 25%;
+    margin: auto;
+    padding-bottom: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCC;
+    box-shadow: 5px 5px 20px #000000;
+    right: 0px;
+    left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+html, #button{
+  margin-top: 20px;
+}
+html, #error
+{
+  position: absolute; width:100%; bottom: 0%;
+  padding-left: 5px;
+}
