@@ -19,6 +19,8 @@
 9. 쿠폰 페이지
 10. 관리자 페이지
 
+<hr>
+
 기술
 =====
 사용 기술
@@ -29,13 +31,12 @@
 4. PHP
 5. mysql
 
+<hr>
 데이터 베이스 간략 구조
---------
+=======
 
-<br>
 회원정보 데이터 베이스 예시
 ----
-
 ![Alt text](image/member_information_database.PNG)
 
 <br><br>
