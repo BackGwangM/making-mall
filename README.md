@@ -35,8 +35,8 @@
 <br>
 회원정보 데이터 베이스 예시
 ----
+
 ![Alt text](image/member_information_database.PNG)
-쿠폰 열 추가 예정 php배열로 값 넣기!
 
 <br><br>
 책 정보 데이터 베이스 예시
