@@ -3,7 +3,7 @@
     if(isset($_SESSION["id"]) && isset($_SESSION["pw"])){
         
     $conn = mysqli_connect('localhost', 'root', '111111');
-    mysqli_select_db($conn, "worktest");
+    mysqli_select_db($conn, "shop");
     if(isset($_GET["cartset"])==1 && $_GET["cartset"] == 1)
     {
         unset( $_SESSION['cart'] );
@@ -18,11 +18,11 @@
     $pw = $_SESSION["pw"];
     }
 
-    $sql = "SELECT * FROM user_id WHERE id = '".$id."' && pw = '".$pw."';";
+    $sql = "SELECT * FROM member_data WHERE id = '".$id."' && pw = '".$pw."';";
     $result = mysqli_query($conn, $sql);
     if($result->num_rows > 0 && $id != '' && $pw != '')
     {
-        $sql = "SELECT * FROM user_id;";
+        $sql = "SELECT * FROM member_data;";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
     }
@@ -49,7 +49,7 @@
                 <?php     
                 if(isset($_SESSION["id"]) && isset($_SESSION["pw"])&&$result->num_rows > 0 && $id != '' && $pw != '')
                 {   
-                    $sql = "SELECT * FROM user_id WHERE id = '".$id."' && pw = '".$pw."';";
+                    $sql = "SELECT * FROM member_data WHERE id = '".$id."' && pw = '".$pw."';";
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
                     echo $row['name']."님 안녕하세요"."<br>";

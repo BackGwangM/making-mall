@@ -1,10 +1,10 @@
 <?php
     $conn = mysqli_connect('localhost', 'root', '111111');
-    mysqli_select_db($conn, "worktest");
+    mysqli_select_db($conn, "shop");
 
     $id = $_POST["id"];
 
-    $sql = "SELECT * FROM user_id WHERE id = '".$id."';";
+    $sql = "SELECT * FROM member_data WHERE id = '".$id."';";
     $result = mysqli_query($conn, $sql);
     if($result->num_rows > 0)
     {
@@ -12,19 +12,19 @@
         window.alert('중복된 아이디가 존재합니다');
         history.back();
         </script>";
-        $sql = "DELETE FROM user_id WHERE created = 'now()';";
+        $sql = "DELETE FROM member_data WHERE created = 'now()';";
         $result = mysqli_query($conn, $sql);
     }
-    elseif($_POST['id'] == ' ' && $_POST['pw'] == ' ' && $_POST['email'] == ' ' && $_POST['name'] == ' '){
+    elseif($_POST['adress'] != ' ' && $_POST['id'] == ' ' && $_POST['pw'] == ' ' && $_POST['email'] == ' ' && $_POST['name'] == ' '){
         echo"<script>
         window.alert('빠짐없이 기록해 주십시오');
         history.back();
         </script>";
-        $sql = "DELETE FROM user_id WHERE created = 'now()';";
+        $sql = "DELETE FROM member_data WHERE created = 'now()';";
         $result = mysqli_query($conn, $sql);
     }
     else{
-        $sql = "INSERT INTO user_id (id,pw,name, email, created) VALUES('".$_POST['id']."', '".$_POST['pw']."','".$_POST['name']."', '".$_POST['email']."', now())";
+        $sql = "INSERT INTO member_data (`id`, `pw`, `name`, `adress`,`e-mail`, `created`) VALUES('".$_POST['id']."', '".$_POST['pw']."','".$_POST['name']."','".$_POST['adress']."', '".$_POST['email']."', now())";
         $result = mysqli_query($conn, $sql);
         echo "<script> window.alert('회원가입이 성공적으로 완료되었습니다.'); </script>";
         header('Location: http://localhost/homework_3/homework_4/login.php');

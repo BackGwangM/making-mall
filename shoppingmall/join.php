@@ -1,9 +1,3 @@
-<?php
-  $conn = mysqli_connect('localhost', 'root', '111111');
-  mysqli_select_db($conn, "login");
-  $result = mysqli_query($conn, "SELECT *FROM login");
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +39,11 @@
 		<tr>
 			<td>e-mail  </td>
 			<td><input type="email" name="email" placeholder="e-mail" require/></td>
+		</tr>
+		<tr>
+			<td>주소  </td>
+			<td><input type="text" name="adress" placeholder="주소" require/></td>
+		</tr>
 		</tbody>
 </table>
 <div id="button">
