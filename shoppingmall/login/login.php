@@ -2,7 +2,7 @@
     if(isset($_SESSION["id"]) && isset($_SESSION["pw"]))
     {
         $conn = mysqli_connect('localhost', 'root', '111111');
-    mysqli_select_db($conn, "shop");
+        mysqli_select_db($conn, "shop");
     if($_SESSION["id"] != '')
     {
         $id = $_SESSION["id"];
@@ -33,15 +33,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<link rel="stylesheet" type="text/css" href="http://localhost/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="http://localhost/homework_3/homework_4/login_style.css">
+	<link rel="stylesheet" type="text/css" href="./login_style.css">
 </head>
 <body>
     <div id = "main" >
         <h1>월로서점 로그인</h1>
-    <form action="http://localhost/homework_3/homework_4/loginprocess.php" method="POST">
+    <form action="loginprocess.php" method="POST">
         <p><input type="text" placeholder="아이디" name="id" maxlength="20" size=25px required> </p>
         <p><input type="password" placeholder="비밀번호" name="pw" maxlength="16" size=25px required></p>
-        <a href="http://localhost/homework_3/homework_4/join.php"><input type="button" name="회원가입" value="회원가입" class = "btn btn-info"></a>
+        <a href="./join/join.php"><input type="button" name="회원가입" value="회원가입" class = "btn btn-info"></a>
         <input type="submit" name="로그인" value="로그인" class="btn btn-success">
     </form>
     </div>

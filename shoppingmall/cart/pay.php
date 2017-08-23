@@ -3,12 +3,12 @@
     if(isset($_SESSION['id']) != 1 && isset($_SESSION['pw']) != 1)
     {
         echo '<script>alert("로그인 후 이용해 주십시오!");
-        location.href="http://localhost/homework_3/homework_4/login.php";</script>';
+        location.href="./login/login.php";</script>';
     }
     elseif(isset($_SESSION['cart']) != 1)
     {
         echo '<script>alert("장바구니에 들어 있는 상품이 없습니다.");
-        location.href="http://localhost/homework_3/homework_4/index.php";</script>';
+        location.href="./index.php";</script>';
     }
 ?>
 <!DOCTYPE>
@@ -24,11 +24,11 @@
         if(up)
         {
             alert("'.$_POST['total'].'원을 결제 합니다!");
-            location.href="http://localhost/homework_3/homework_4/index.php?cartset=1";
+            location.href="./index.php?cartset=1";
         }
         else{
             alert("결제를 취소합니다!");
-            location.href="http://localhost/homework_3/homework_4/index.php";
+            location.href="./index.php";
         }
         </script>';
         ?>

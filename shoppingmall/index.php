@@ -39,7 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="stylesheet" type="text/css" href="http://localhost/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/homework_3/homework_4/main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
         
@@ -53,11 +53,11 @@
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
                     echo $row['name']."님 안녕하세요"."<br>";
-                    echo '<a href="logout.php"><input type="button" class="btn btn-warning" value="로그아웃"></a> ';
-                    echo '<a href="cart.php"><input type="button" class="btn btn-Info" value="장바구니"></a>';
+                    echo '<a href="login/logout.php"><input type="button" class="btn btn-warning" value="로그아웃"></a> ';
+                    echo '<a href="cart/cart.php"><input type="button" class="btn btn-Info" value="장바구니"></a>';
                 }
                 else{
-                    echo '<a href="login.php"><input type="button" value="로그인" class="btn btn-success"></a> <a href="join.php"><input type="button" value="회원가입"  class = "btn btn-info"></a>';
+                    echo '<a href="login/login.php"><input type="button" value="로그인" class="btn btn-success"></a> <a href="join.php"><input type="button" value="회원가입"  class = "btn btn-info"></a>';
                 }
                 
                 ?>

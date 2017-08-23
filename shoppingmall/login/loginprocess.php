@@ -21,7 +21,7 @@
         $_SESSION["id"] = $_POST["id"];
         $_SESSION["pw"] = $_POST["pw"];
         echo '<script>alert("성공적으로 로그인 되었습니다!");
-        location.href="http://localhost/homework_3/homework_4/index.php";</script>';
+        location.href="./index.php";</script>';
     }
     else if($result->num_rows == 0){
         echo "

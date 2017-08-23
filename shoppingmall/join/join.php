@@ -41,13 +41,16 @@
 			<td><input type="email" name="email" placeholder="e-mail" require/></td>
 		</tr>
 		<tr>
+		<td><br></td>
+		</tr>
+		<tr>
 			<td>주소  </td>
 			<td><input type="text" name="adress" placeholder="주소" require/></td>
 		</tr>
 		</tbody>
 </table>
 <div id="button">
-<input type="submit" name="회원가입" value="회원가입" class="btn btn-success"> <a href="http://localhost/homework_3/homework_4/index.php"> <input type="button" value="뒤로가기" class="btn btn-warning"/></a>
+<input type="submit" name="회원가입" value="회원가입" class="btn btn-success"> <a href="./index.php"> <input type="button" value="뒤로가기" class="btn btn-warning"/></a>
 </div>
 </form>
 	</div>

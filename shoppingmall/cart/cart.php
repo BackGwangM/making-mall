@@ -3,12 +3,12 @@
     if(isset($_SESSION['id']) != 1 && isset($_SESSION['pw']) != 1)
     {
         echo '<script>alert("로그인 후 이용해 주십시오!");
-        location.href="http://localhost/homework_3/homework_4/login.php";</script>';
+        location.href="./login.php";</script>';
     }
     elseif(isset($_SESSION['cart']) != 1)
     {
         echo '<script>alert("장바구니에 들어 있는 상품이 없습니다.");
-        location.href="http://localhost/homework_3/homework_4/index.php";</script>';
+        location.href="./index.php";</script>';
     }
     $conn = mysqli_connect('localhost', 'root', '111111');
     mysqli_select_db($conn, "worktest");
@@ -21,7 +21,7 @@
         <meta charset="utf8">
         <title>장바구니</title>
     <link rel="stylesheet" type="text/css" href="http://localhost/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/homework_3/homework_4/main.css">
+    <link rel="stylesheet" type="text/css" href="./main.css">
     </head>
     <body>
         <div id="head">
