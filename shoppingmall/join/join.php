@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<link rel="stylesheet" type="text/css" href="http://localhost/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./login_style.css">
+	<link rel="stylesheet" type="text/css" href="../login_style.css">
 	</head>
 	<body>
 	<div id = "main">
@@ -50,7 +50,7 @@
 		</tbody>
 </table>
 <div id="button">
-<input type="submit" name="회원가입" value="회원가입" class="btn btn-success"> <a href="./index.php"> <input type="button" value="뒤로가기" class="btn btn-warning"/></a>
+<input type="submit" name="회원가입" value="회원가입" class="btn btn-success"> <a href="../index.php"> <input type="button" value="뒤로가기" class="btn btn-warning"/></a>
 </div>
 </form>
 	</div>

@@ -24,11 +24,11 @@
         if(up)
         {
             alert("'.$_POST['total'].'원을 결제 합니다!");
-            location.href="./index.php?cartset=1";
+            location.href="../index.php?cartset=1";
         }
         else{
             alert("결제를 취소합니다!");
-            location.href="./index.php";
+            location.href="../index.php";
         }
         </script>';
         ?>

@@ -26,7 +26,7 @@
     else{
         $sql = "INSERT INTO member_data (`id`, `pw`, `name`, `adress`,`e-mail`, `created`) VALUES('".$_POST['id']."', '".$_POST['pw']."','".$_POST['name']."','".$_POST['adress']."', '".$_POST['email']."', now())";
         $result = mysqli_query($conn, $sql);
-        echo "<script> window.alert('회원가입이 성공적으로 완료되었습니다.'); </script>";
-        header('Location: http://localhost/homework_3/homework_4/login.php');
+        echo "<script> window.alert('회원가입이 성공적으로 완료되었습니다.'); 
+        location.href='../index.php';";</script>";
     }
 ?>

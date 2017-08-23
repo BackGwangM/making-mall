@@ -12,7 +12,7 @@
                 array_push($cart_arr, $cart_v);
                 $_SESSION["cart"] = $cart_arr;
                 echo '<script>
-        location.href="./index.php";
+        location.href="../index.php";
         </script>';
     }
     else{        
@@ -25,7 +25,7 @@
 }
     else{
         echo '<script>alert("로그인 후 이용해 주십시오!");
-        location.href="./login/login.php";
+        location.href="../login/login.php";
         </script>';
     }
     
