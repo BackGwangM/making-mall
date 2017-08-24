@@ -6,7 +6,7 @@
     $cart_arr = array();
     
     
-    if(isset($_SESSION["cart"]) == 1)
+    if(isset($_SESSION["cart"]))
     {   
         $cart_arr = $_SESSION["cart"];
                 array_push($cart_arr, $cart_v);
@@ -19,7 +19,7 @@
         array_push($cart_arr, $cart_v);
         $_SESSION["cart"] = $cart_arr;
         echo '<script>
-        location.href="./index.php";
+        location.href="../index.php";
         </script>';
     }
 }
@@ -28,5 +28,4 @@
         location.href="../login/login.php";
         </script>';
     }
-    
 ?>
