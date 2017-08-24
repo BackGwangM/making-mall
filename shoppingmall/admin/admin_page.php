@@ -16,10 +16,18 @@
     <head>
         <title>운영자 페이지</title>
         <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="../main.css">
     </head>
     <body>
-    <center><a href="admin_page.php"><img src="1.png" alt="<h1>월로서점</h1>" width="225px"></a><h1>운영자 관리 페이지</h1></center>
-    
+    <div id="head"  style="margin-bottom:10px;">
+        <center>
+            <a href="admin_page.php">
+            <img src="../1.png" alt="<h1>월로서점</h1>" width="225px">
+            </a>
+            <h1>운영자 관리 페이지</h1>
+        </center>
+    </div>
+        <center></center>
     <?php
         if(isset($_GET["no"]))
     {
