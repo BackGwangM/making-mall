@@ -33,8 +33,8 @@
                 <tr>
                     <td class="table" style="width : 50px;">No</td>
                     <td colspan="2" class="table" style="width : 600px;">책 제목</td>
-                    <td class="table" style="width : 100px;">가격</td>
                     <td class="table" style="width : 100px;">글쓴이</td>
+                    <td class="table" style="width : 100px;">가격</td>
                 </tr>
                 <?php
                 for($i = 0; $i < sizeof($arr); ++$i)
@@ -47,8 +47,8 @@
                     <td style="text-align: center;" >'.($i+1).'</td>
                     <td style="text-align: center;" ><img src="'.$row["image_src"].'" height="100px">.</td>
                     <td style="text-align: center;" >'.$row["name"].'</td>
-                    <td style="text-align: right;" >'.$row["price"].'</td>
                     <td style="text-align: center;  padding-left: 50px;">'.$row["author"].'</td>
+                    <td style="text-align: right;" >'.$row["price"].' 원</td>
                     </tr>
                     <tr>
                     <td colspan="5"><hr style="color: gray"></td>
@@ -56,8 +56,12 @@
                     ';
                 }
                 ?>
+                <tr>
+                    <td colspan="4" style="text-align: center;" ><h5>total</h5></td>
+                    <td style="text-align: right;"><?php echo $total;?> 원</td>
+                </tr>
             </table>
-            <br><br><br>
+            <br>
             <?php 
             $sql = "SELECT * FROM member_data WHERE id = '".$_SESSION['id']."';"; 
             $result = mysqli_query($conn, $sql);
@@ -65,18 +69,19 @@
             ?>
             <table>
                 <tr>
-                    <td>배송 받으실 분</td>
-                    <td><input type="text" value="<?php echo $row['name']?>" name="name" require/></td>
+                    <td style="padding-right: 200px;">배송 받으실 분</td>
+                    <td style="padding-bottom: 25px; padding-top: 25px;"><input type="text" value="<?php echo $row['name']?>" name="name" require/></td>
                     <tr>
                     <td>배송지</td>
-                    <td><input type="text" value="<?php echo $row['adress']?>" name="adress" require/></td>
+                    <td style="padding-bottom: 25px; padding-top: 25px;"><input type="text" value="<?php echo $row['adress']?>" name="adress" size="50" require/></td>
                     </tr>
                     <tr></tr>
                     <td>이메일</td>
-                    <td><input type="text" value="<?php echo $row['e-mail']?>" name="e-mail" require/></td>
+                    <td style="padding-bottom: 25px; padding-top: 25px;"><input type="text" value="<?php echo $row['e-mail']?>" name="e-mail" size="50" require/></td>
                 </tr>
             </table>
-            <input type="submit" value="결제">
+            <input type="hidden" value="<?php echo $_POST['total']?>" name="total">
+            <input type="submit" value="결제" class="btn btn-success">
                 </center>
             </form>
             </div>
