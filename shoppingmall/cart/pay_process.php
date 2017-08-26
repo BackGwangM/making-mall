@@ -12,6 +12,10 @@
     }
     $conn = mysqli_connect('localhost', 'root', '111111');
     mysqli_select_db($conn, "shop");
+
+    $id = $_SESSION["id"];
+    $cart = implode($_SESSION["cart"], "*");
+
 ?>
 <!DOCTYPE>
 <html>
@@ -19,23 +23,10 @@
     <title></title>
     <body>
         <?php
-            echo '<script>
-        var up;
-        up = confirm("'.$_POST['total'].'원을 결제 하시겠습니까?");
-
-        if(up)
-        {   
-            INSERT INTO `order_history` (`id`, `name`, `adress`, `e-mail`, `product`, `order_date`,`total_price`) VALUES("'.$_SESSON["id"].'","'.$_POST["name"].'","'.$_POST["adress"].'", "'.$_POST["e-mail"].'","'.$_SESSON["cart"].'", "now()", "'.$_POST["total"].'");
-            alert("'.$_POST['total'].'원을 결제 합니다!");
-            location.href="../index.php?cartset=1";
-        }
-        else{
-            alert("결제를 취소합니다!");
-            location.href="../index.php";
-        }
-        </script>';
+            $sql = 'INSERT INTO `order_history` (`id`, `name`, `adress`, `e-mail`, `product`, `order_date`,`total_price`) VALUES("'.$id.'","'.$_POST["name"].'","'.$_POST["adress"].'", "'.$_POST["e-mail"].'","'.$cart.'", "now()", "'.$_POST["total"].'");';
+            $result = mysqli_query($conn, $sql);
+            echo '<script>alert("'.$_POST['total'].'원을 결제하였습니다.");
+            location.href="../index.php?cartset=1";</script>';
         ?>
-        
-        
     </body>
 </html>
