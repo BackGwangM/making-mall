@@ -11,7 +11,7 @@
         location.href="../index.php";</script>';
     }
     $conn = mysqli_connect('localhost', 'root', '111111');
-    mysqli_select_db($conn, "worktest");
+    mysqli_select_db($conn, "shop");
     $arr = $_SESSION['cart'];
     $total = 0;
 ?>
@@ -20,6 +20,8 @@
     <head>
         <meta charset="utf8">
         <title>장바구니</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="stylesheet" type="text/css" href="http://localhost/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     </head>
@@ -42,7 +44,7 @@
                 <?php
                 for($i = 0; $i < sizeof($arr); ++$i)
                 {
-                    $sql = "SELECT * FROM product WHERE no = '".$arr[$i]."';";
+                    $sql = "SELECT * FROM book_data WHERE no = '".$arr[$i]."';";
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
                     $total = $total + $row["price"];
@@ -55,10 +57,13 @@
                 }
                 ?>
                 <input type="hidden" value="<?php echo $total ?>" name="total">
-                
             </table>
             <input type="submit" class="btn btn-success" value="구매" style="margin-top: 50px;">
             </form>
         </center>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="http://localhost/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     </body>
 </html>
