@@ -29,9 +29,7 @@
         $row = mysqli_fetch_assoc($result);
     }
     }
-    
-    
-    
+
 ?>
 
 <!DOCTYPE>
