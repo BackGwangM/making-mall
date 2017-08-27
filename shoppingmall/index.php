@@ -76,7 +76,7 @@
                        $sql = "SELECT * FROM book_data;";
                        $result = mysqli_query($conn, $sql);
                        while($row = mysqli_fetch_assoc($result)) { 
-                            echo '<tr><td style="padding-right: 50px;"><a href="./books/'.$row["no"].'.html"><img src='.$row["image_src"].' class="td_img"></a></td><td style=" padding-left: 100px; padding-right: 200px;"><br><h3>'.$row["name"].'</h3> 작가 | '.$row["author"].'<br> 출판사 | '.$row["publishing"].'<br> 작가 | '.$row["author"].'<br> 출판일자 | '.$row["date_of_publication"].'<br><br><h4>'.$row["price"].' 원</h4> </td></tr><tr><td colspan="2"><hr style="color: gray"></td></tr>';
+                            echo '<tr><td style="padding-right: 50px;"><a href="./books/book.php?'.$row["no"].'"><img src='.$row["image_src"].' class="td_img"></a></td><td style=" padding-left: 100px; padding-right: 200px;"><br><h3>'.$row["name"].'</h3> 작가 | '.$row["author"].'<br> 출판사 | '.$row["publishing"].'<br> 작가 | '.$row["author"].'<br> 출판일자 | '.$row["date_of_publication"].'<br><br><h4>'.$row["price"].' 원</h4> </td></tr><tr><td colspan="2"><hr style="color: gray"></td></tr>';
                        }
                        ?>
                    </tbody>
