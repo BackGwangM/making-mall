@@ -18,7 +18,7 @@
 <html>
     <head>
     <meta charset="utf8">
-    <title>결제 진행 중... <?php echo $_POST['total']?>원</title>
+    <title>결제 진행 중...</title>
     <link rel="stylesheet" type="text/css" href="http://localhost/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     <link rel="stylesheet" type="text/css" href="../popup.css">
@@ -86,17 +86,19 @@
                 </tr>
             </table>
             <input type="hidden" value="<?php echo $_POST['total']?>" name="total">
-            <a href="#loginmodal" id="modaltrigger"><input type="button" value="결제"class="btn btn-success"></a>
+            
+            <a href="#loginmodal" id="modaltrigger"><input type="button" value="결제"class="btn btn-success" onclick="input();"></a>
                 </center>
             
             </div>
 
            
 </form>
-<form action="../index.php" method="POST">
+<form action="pay_process.php" method="POST">
 <div id="loginmodal" style="display:none;">
 	<h2>결제 확인</h2>
-	<div class="p_c_text">아래 사항대로 결제가 진행됩니다. 맞으시면 결제 버튼을 눌러주세요.</div>
+    <div class="p_c_text">아래 사항대로 결제가 진행됩니다. 맞으시면 결제 버튼을 눌러주세요. </div>
+    <script>document.write(name);</script>
 	<div class="login_line">
 		<div class="box_in">
 			<center>
@@ -138,28 +140,16 @@
 	<div class="find_join">
 		<table>
 			<td style="padding-right: 100px;">수령인</td>
-			<td style="padding-bottom: 10px; padding-top: 25px;">
-				<script>
-					var val = $('#name').val();
-					document.write(val);
-				</script>
+			<td id="name_b" style="padding-bottom: 10px; padding-top: 25px;">4
 			</td>
 			<tr>
 				<td>배송지</td>
-				<td style="padding-bottom: 10px; padding-top: 25px;">
-					<script>
-						var val = $('#adress').val();
-						document.write(val);
-					</script>
+				<td id = "address_b"style="padding-bottom: 10px; padding-top: 25px;">
 				</td>
 			</tr>
 			<tr></tr>
 			<td>이메일</td>
-			<td style="padding-bottom: 10px; padding-top: 25px;">
-				<script>
-					var val = $('#e-mail').val();
-					document.write(val);
-				</script>
+			<td id = "mail_b" style="padding-bottom: 10px; padding-top: 25px;">
 			</td>
 		</table>
 		<input type="submit" vaule="결제 확인" class="btn btn-success">
@@ -175,4 +165,14 @@ $(function(){
 </script>
 <!--//모달윈도우부분-->
 
+<script>
+    function input() {
+        var name_a = document.getElementById("name").value;
+        document.getElementById("name_b").innerHTML = name_a;
+        var adress_a = document.getElementById("adress").value;
+        document.getElementById("address_b").innerHTML = adress_a;
+        var mail_a = document.getElementById("e-mail").value;
+        document.getElementById("mail_b").innerHTML = mail_a;
+    }
+</script>
 </html>

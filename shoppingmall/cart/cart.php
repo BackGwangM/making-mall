@@ -1,18 +1,19 @@
 <?php
     session_start();
+    $arr = $_SESSION['cart'];
     if(isset($_SESSION['id']) != 1 && isset($_SESSION['pw']) != 1)
     {
         echo '<script>alert("로그인 후 이용해 주십시오!");
         location.href="../login.php";</script>';
     }
-    elseif(isset($_SESSION['cart']) != 1)
+    elseif(isset($_SESSION['cart']) != 1 || sizeof($arr)==0)
     {
         echo '<script>alert("장바구니에 들어 있는 상품이 없습니다.");
         location.href="../index.php";</script>';
     }
     $conn = mysqli_connect('localhost', 'root', '111111');
     mysqli_select_db($conn, "shop");
-    $arr = $_SESSION['cart'];
+    
     $total = 0;
 ?>
 <!DOCTYPE>
@@ -32,13 +33,13 @@
         </center>
         </div>
         <center>
-        <form action="pay.php" method="POST">
             <table border="1" style = "margin-top:50px;">
                 <tr>
                     <td class="table" style="width : 50px;">No</td>
                     <td class="table" style="width : 500px;">책 제목</td>
                     <td class="table" style="width : 100px;">가격</td>
                     <td class="table" style="width : 100px;">글쓴이</td>
+                    <td>삭제</td>
                 </tr>
                 
                 <?php
@@ -53,13 +54,13 @@
                     <td style="text-align: center;" >'.$row["name"].'</td>
                     <td style="text-align: right;" >'.$row["price"].'</td>
                     <td style="text-align: center;">'.$row["author"].'</td>
+                    <td><a href="cart_delete.php?delete_number='.$i.'"><input type="button" value="삭제" class="btn btn-warning"></a></td>
                     </tr>';
                 }
                 ?>
                 <input type="hidden" value="<?php echo $total ?>" name="total">
             </table>
-            <input type="submit" class="btn btn-success" value="구매" style="margin-top: 50px;">
-            </form>
+            <a href="pay.php"><input type="button" class="btn btn-success" value="구매" style="margin-top: 50px;"></a>
         </center>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

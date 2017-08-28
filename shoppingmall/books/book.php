@@ -7,11 +7,9 @@
     }
     $conn = mysqli_connect('localhost', 'root', '111111');
     mysqli_select_db($conn, "shop");
-    $sql = "SELECT * FROM book_data where no = $_GET['no'];";
+    $sql = "SELECT * FROM book_data where no = ".$_GET['no'].";";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-
-    
 ?>
 <!DOCTYPE>
 <html>
@@ -32,14 +30,14 @@
                 <article>
                     <ul>
                         <li>저자 <?php echo $row["author"];?> | </li>
-                        <li>출판사 <?php echo $row["author"]; ?> | </li>
-                        <li>출간일  <?php echo $row["author"]; ?> | </li>
-                        <li>가격  <?php echo $row["author"]; ?> 원</li>
+                        <li>출판사 <?php echo $row["publishing"]; ?> | </li>
+                        <li>출간일  <?php echo $row["date_of_publication"]; ?> | </li>
+                        <li>가격  <?php echo $row["price"]; ?> 원</li>
                     </ul>
 
                     <h2>책 소개</h2>
                     <p style="width:50%;">
-                         <?php echo $row["author"] ?>
+                         <?php echo $row["introduce"] ?>
                     </p>
                 </article>
                 <form method="GET" action="http://localhost/homework_3/homework_4/cart/cart_process.php">
